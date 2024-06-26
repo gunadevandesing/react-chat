@@ -1,5 +1,6 @@
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import PropTypes from "prop-types";
 
 const Message = ({ message }) => {
   const [user] = useAuthState(auth);
@@ -16,6 +17,10 @@ const Message = ({ message }) => {
       </div>
     </div>
   );
+};
+
+Message.propTypes = {
+  message: PropTypes.object.isRequired,
 };
 
 export default Message;

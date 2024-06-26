@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import PropTypes from "prop-types";
 
 const SendMessage = ({ scroll }) => {
   const [message, setMessage] = useState("");
@@ -39,6 +40,10 @@ const SendMessage = ({ scroll }) => {
       <button type="submit">Send</button>
     </form>
   );
+};
+
+SendMessage.propTypes = {
+  scroll: PropTypes.object.isRequired,
 };
 
 export default SendMessage;
